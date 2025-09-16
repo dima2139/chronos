@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <BrowserRouter basename="/chronos">
+    <BrowserRouter>
       <Navbar />
       <App />
     </BrowserRouter>
