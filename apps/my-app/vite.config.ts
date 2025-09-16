@@ -3,7 +3,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => ({
-  base: '/chronos',
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/my-app',
   server: {
