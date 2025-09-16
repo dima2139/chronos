@@ -25,10 +25,11 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
 
-      # Run lint and build (always exist)
+      # Run lint for all projects
       - run: npx nx run-many -t lint --skip-nx-cache
+
+      # Run build for all projects
       - run: npx nx run-many -t build --skip-nx-cache
 
-      # Run typecheck and tests (skip if missing)
-      - run: npx nx run-many -t typecheck --skip-nx-cache --ignore-missing
-      - run: npx nx run-many -t test --skip-nx-cache --ignore-missing
+      # Run tests (skip if a project doesn't define them)
+      - run: npx nx run-many -t test --skip-nx-cache --nx-ignore-missing-targets
