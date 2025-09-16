@@ -2,7 +2,12 @@
   "name": "@chronos/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve my-app",
+    "build": "nx build my-app",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist/apps/my-app"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -60,6 +65,7 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "gh-pages": "^6.3.0",
     "jest": "^30.0.2",
     "jest-environment-node": "^30.0.2",
     "jest-util": "^30.0.2",
@@ -80,5 +86,6 @@
   },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "homepage": "https://dima2139.github.io/chronos"
 }
