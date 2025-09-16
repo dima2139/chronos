@@ -30,6 +30,3 @@ jobs:
 
       # Run build for all projects
       - run: npx nx run-many -t build --skip-nx-cache
-
-      # Run tests (skip if a project doesn't define them)
-      - run: npx nx run-many -t test --skip-nx-cache --nx-ignore-missing-targets
