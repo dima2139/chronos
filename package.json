@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve my-app",
-    "build": "nx build my-app",
+    "build": "nx build my-app --skip-nx-cache",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist/apps/my-app"
   },
