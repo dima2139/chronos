@@ -18,7 +18,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Setup Node + cache npm
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,5 +25,14 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
 
-      # Run lint, tests, build, and typecheck without Nx Cloud
-      - run: npx nx run-many -t lint test build typecheck --skip-nx-cache
+      # Run lint for all projects
+      - run: npx nx run-many -t lint --skip-nx-cache --ignore-missing
+
+      # Run build for all projects
+      - run: npx nx run-many -t build --skip-nx-cache --ignore-missing
+
+      # Run typecheck (skip if not defined)
+      - run: npx nx run-many -t typecheck --skip-nx-cache --ignore-missing
+
+      # Run tests (skip if not defined)
+      - run: npx nx run-many -t test --skip-nx-cache --ignore-missing
